@@ -17,29 +17,35 @@
 
         #content {
             padding: 10px;
+            padding-top: 100px;
         }
 
         /* Image container styles */
         #image-container {
-            position: relative;
-            display: inline-block;
+            position:relative ;
+            display:flex;
+            
             border: 8px solid transparent;
             border-image: linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,255,255,0.5)) 1;
             animation: borderColor 2s linear infinite alternate;
             border-radius: 10px;
-            max-width: 100%;
+            max-width: 200%;
             margin-bottom: 20px;
         }
 
         #image-container img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
+            image-rendering: -moz-crisp-edges;
+             image-rendering: -webkit-optimize-contrast;
+             image-rendering: crisp-edges;
+             -ms-interpolation-mode: nearest-neighbor;
+            /* border-radius: 10px; */
         }
 
         /* Text styles */
         #text {
-            font-size: 1.2em; /* Adjusted for better readability on mobile */
+            font-size: 2.0em; /* Adjusted for better readability on mobile */
             padding: 20px;
             font-style: italic;
             max-width: 800px;
@@ -66,14 +72,18 @@
         }
 
         /* Responsive adjustments */
-        @media (max-width: 600px) {
-            #text {
-                font-size: 1em;
-            }
+        @media (max-width: 2000px) {
+            /* #text {
+                font-size: 1.5em;
+            } */
+             .img {
+                max-width: 300px;
+                max-height: auto;
+             }
 
             .choice-button {
                 padding: 12px 20px;
-                font-size: 0.9em;
+                font-size: 1.5em;
             }
         }
 
@@ -115,7 +125,7 @@
         const storyData = {
             "start": {
                 id: "start",
-                text: "Suddenly, I'm awake, floating above the ground...",
+                text: "Suddenly... I'm awake, floating above the ground...",
                 imageName: "Ghost1.jpeg",
                 choices: [
                     {text: "I must be a ghost", destinationID: "aGhost"},
