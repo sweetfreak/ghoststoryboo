@@ -2,48 +2,24 @@
 <html>
 <head>
     <title>Visual Novel Project</title>
+    <!-- Add the viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Base styles */
         body {
             background-color: black;
             color: white;
             font-family: monospace;
             text-align: center;
-            overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
-        #image-container img {
-            max-width: 400px;
-            max-height: 400px;
-            border-radius: 10px;
+
+        #content {
+            padding: 10px;
         }
-        #text {
-            font-size: 1.5em;
-            padding: 20px;
-            font-style: italic;
-        }
-        .choice-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: rgba(255, 255, 255, 0.5);
-            color: white;
-            font-weight: bold;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.5s, opacity 0.5s, top 1s;
-            position: relative;
-        }
-        .choice-button.clicked {
-            transform: scale(1.5);
-        }
-        .choice-button.fall {
-            transform: scale(0.5);
-            top: 500px;
-            opacity: 0;
-        }
-        .hidden {
-            opacity: 0;
-        }
+
+        /* Image container styles */
         #image-container {
             position: relative;
             display: inline-block;
@@ -51,7 +27,72 @@
             border-image: linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,255,255,0.5)) 1;
             animation: borderColor 2s linear infinite alternate;
             border-radius: 10px;
+            max-width: 100%;
+            margin-bottom: 20px;
         }
+
+        #image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Text styles */
+        #text {
+            font-size: 1.2em; /* Adjusted for better readability on mobile */
+            padding: 20px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Choice button styles */
+        .choice-button {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.5s, opacity 0.5s, top 1s;
+            position: relative;
+            font-size: 1em;
+            max-width: 90%;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            #text {
+                font-size: 1em;
+            }
+
+            .choice-button {
+                padding: 12px 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Button animations */
+        .choice-button.clicked {
+            transform: scale(1.5);
+        }
+
+        .choice-button.fall {
+            transform: scale(0.5);
+            top: 500px;
+            opacity: 0;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        /* Border animation */
         @keyframes borderColor {
             0% {
                 border-image: linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,255,255,0.5)) 1;
@@ -75,7 +116,7 @@
             "start": {
                 id: "start",
                 text: "Suddenly, I'm awake, floating above the ground...",
-                imageName: "Ghost1.jpeg",
+                imageName: "Ghost1.png",
                 choices: [
                     {text: "I must be a ghost", destinationID: "aGhost"},
                     {text: "I can fly!", destinationID: "firstFlying"}
@@ -84,7 +125,7 @@
             "aGhost": {
                 id: "aGhost",
                 text: "A ghost? That must mean",
-                imageName: "Ghost1.jpeg",
+                imageName: "Ghost1.png",
                 choices: [
                     {text: "I'm dead...", destinationID: "dead"}
                 ]
@@ -92,7 +133,7 @@
             "dead": {
                 id: "dead",
                 text: "Wow. I'm overwhelmed with feelings both physical and emotional",
-                imageName: "Ghost3.jpeg",
+                imageName: "Ghost3.png",
                 choices: [
                     {text: "The weather is hot and dry... mate", destinationID: "start"}
                 ]
@@ -100,7 +141,7 @@
             "firstFlying": {
                 id: "firstFlying",
                 text: "I'm the first flying man in human history",
-                imageName: "Ghost2.jpeg",
+                imageName: "Ghost2.png",
                 choices: [
                     {text: "I've got to tell the newspaper", destinationID: "newspaper"},
                     {text: "Wait, why can I see through my hand? Could I be a...", destinationID: "aGhost"}
@@ -109,7 +150,7 @@
             "newspaper": {
                 id: "newspaper",
                 text: "I reach to call my contacts at the paper, but my hand passes through my phone. Does this mean what I think it means?",
-                imageName: "Ghost2.jpeg",
+                imageName: "Ghost2.png",
                 choices: [
                     {text: "I must be a... a...", destinationID: "aGhost"}
                 ]
