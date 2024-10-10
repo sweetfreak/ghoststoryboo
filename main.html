@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visual Novel Project</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+        #image-container img {
+            max-width: 400px;
+            max-height: 400px;
+            border-radius: 10px;
+        }
+        #text {
+            font-size: 1.5em;
+            padding: 20px;
+            font-style: italic;
+        }
+        .choice-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.5s, opacity 0.5s, top 1s;
+            position: relative;
+        }
+        .choice-button.clicked {
+            transform: scale(1.5);
+        }
+        .choice-button.fall {
+            transform: scale(0.5);
+            top: 500px;
+            opacity: 0;
+        }
+        .hidden {
+            opacity: 0;
+        }
+        #image-container {
+            position: relative;
+            display: inline-block;
+            border: 8px solid transparent;
+            border-image: linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,255,255,0.5)) 1;
+            animation: borderColor 2s linear infinite alternate;
+            border-radius: 10px;
+        }
+        @keyframes borderColor {
+            0% {
+                border-image: linear-gradient(to bottom right, rgba(255,255,255,1), rgba(255,255,255,0.5)) 1;
+            }
+            100% {
+                border-image: linear-gradient(to bottom right, rgba(255,255,255,0.5), rgba(255,255,255,1)) 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="image-container">
+            <img id="image" src="" alt="" />
+        </div>
+        <div id="text"></div>
+        <div id="choices"></div>
+    </div>
+    <script>
+        const storyData = {
+            "start": {
+                id: "start",
+                text: "Suddenly, I'm awake, floating above the ground...",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I must be a ghost", destinationID: "aGhost"},
+                    {text: "I can fly!", destinationID: "firstFlying"}
+                ]
+            },
+            "aGhost": {
+                id: "aGhost",
+                text: "A ghost? That must mean",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I'm dead...", destinationID: "dead"}
+                ]
+            },
+            "dead": {
+                id: "dead",
+                text: "Wow. I'm overwhelmed with feelings both physical and emotional",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "The weather is hot and dry... mate", destinationID: "start"}
+                ]
+            },
+            "firstFlying": {
+                id: "firstFlying",
+                text: "I'm the first flying man in human history",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "I've got to tell the newspaper", destinationID: "newspaper"},
+                    {text: "Wait, why can I see through my hand? Could I be a...", destinationID: "aGhost"}
+                ]
+            },
+            "newspaper": {
+                id: "newspaper",
+                text: "I reach to call my contacts at the paper, but my hand passes through my phone. Does this mean what I think it means?",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "I must be a... a...", destinationID: "aGhost"}
+                ]
+            }
+        };
+
+        let currentNodeID = "start";
+        let tappedChoice = null;
+
+        function showCurrentNode() {
+            const currentNode = storyData[currentNodeID];
+            const imageElement = document.getElementById('image');
+            const textElement = document.getElementById('text');
+            const choicesElement = document.getElementById('choices');
+
+            // Update image
+            if (currentNode.imageName) {
+                imageElement.src = currentNode.imageName;
+                imageElement.style.display = 'inline';
+            } else {
+                imageElement.style.display = 'none';
+            }
+
+            // Update text
+            textElement.textContent = currentNode.text;
+
+            // Clear previous choices
+            choicesElement.innerHTML = '';
+
+            // Create choice buttons
+            if (currentNode.choices) {
+                currentNode.choices.forEach(choice => {
+                    const button = document.createElement('button');
+                    button.className = 'choice-button';
+                    button.textContent = choice.text;
+                    button.addEventListener('click', () => {
+                        handleChoiceTap(choice);
+                    });
+                    choicesElement.appendChild(button);
+                });
+            }
+        }
+
+        function handleChoiceTap(choice) {
+            tappedChoice = choice.text;
+            const buttons = document.querySelectorAll('.choice-button');
+
+            buttons.forEach(button => {
+                if (button.textContent === tappedChoice) {
+                    button.classList.add('clicked');
+                    setTimeout(() => {
+                        button.classList.add('fall');
+                    }, 500);
+                } else {
+                    button.classList.add('hidden');
+                }
+            });
+
+            setTimeout(() => {
+                currentNodeID = choice.destinationID;
+                resetAnimations();
+                showCurrentNode();
+            }, 1500);
+        }
+
+        function resetAnimations() {
+            tappedChoice = null;
+        }
+
+        // Start the story
+        showCurrentNode();
+    </script>
+</body>
+</html>
