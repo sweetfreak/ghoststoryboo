@@ -125,7 +125,7 @@
         const storyData = {
             "start": {
                 id: "start",
-                text: "Suddenly... I'm awake, floating above the ground...",
+                text: "Suddenly... I'm awake. Floating above the ground...",
                 imageName: "Ghost1.jpeg",
                 choices: [
                     {text: "I must be a ghost", destinationID: "aGhost"},
@@ -134,24 +134,16 @@
             },
             "aGhost": {
                 id: "aGhost",
-                text: "A ghost? That must mean",
-                imageName: "Ghost1.jpeg",
+                text: "A ghost? Yes. So that must mean must mean",
+                imageName: "Ghost2.jpeg",
                 choices: [
-                    {text: "I'm dead...", destinationID: "dead"}
-                ]
-            },
-            "dead": {
-                id: "dead",
-                text: "Wow. I'm overwhelmed with feelings both physical and emotional",
-                imageName: "Ghost3.jpeg",
-                choices: [
-                    {text: "The weather is hot and dry... mate", destinationID: "start"}
+                    {text: "I'm dead.", destinationID: "dead"}
                 ]
             },
             "firstFlying": {
                 id: "firstFlying",
-                text: "I'm the first flying man in human history",
-                imageName: "Ghost2.jpeg",
+                text: "I'm the first flying man in human history!",
+                imageName: "Ghost3.jpeg",
                 choices: [
                     {text: "I've got to tell the newspaper", destinationID: "newspaper"},
                     {text: "Wait, why can I see through my hand? Could I be a...", destinationID: "aGhost"}
@@ -162,9 +154,349 @@
                 text: "I reach to call my contacts at the paper, but my hand passes through my phone. Does this mean what I think it means?",
                 imageName: "Ghost2.jpeg",
                 choices: [
-                    {text: "I must be a... a...", destinationID: "aGhost"}
+                    {text: "I must be a...", destinationID: "aGhost"}
                 ]
-            }
+            },
+            "dead": {
+                id: "dead",
+                text: "Wow. I'm overwhelmed with feelings both physical and emotional",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "The weather is hot and dry... mate", destinationID: "austrailia"}
+                ]
+            },
+            "austrailia": {
+                id: "austrailia",
+                text: "That's right. I was in Austrailia. But why was I there?",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "It was a vacation, I always wanted to see the outback", destinationID: "trip"},
+                    {text: "There was a content involving cereal boxes. I won a free trip to Sydney", destinationID: "trip"},
+                    {text: "I never even wanted to be on this trip", destinationID: "work"}
+                ]
+            },
+            "trip": {
+                id: "trip",
+                text: "Oh yeah, a trip. But what was I actually doing there?",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I was watching TV in my hotel room. It was too hot outside!", destinationID: "hotel"},
+                    {text: "I was on an excursion. Foolish, for a city guy like me.", destinationID: "excursion"},
+                    {text: "Work. Even when I was on vacation, I was always working.", destinationID: "work"}
+                ]
+            },
+            "work": {
+                id: "work",
+                text: "Work always did control my life...",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I was quite the working stiff", destinationID: "timeOffice"}
+                ]
+            },
+            "hotel": {
+                id: "hotel",
+                text: "So I'm safely in my hotel?",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Maybe I'm not dead...", destinationID: "dream"}
+                ]
+            },
+            "excursion": {
+                id: "excursion",
+                text: "I should have followed my natural inclination to stay indoors. But I didn't. And I died. What's the last thing I remember seeing?",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Some sand, some shrubs. And then I remember taking my taxi back to my hotel...", destinationID: "wait"},
+                    {text: "A big round eye", destinationID: "bird"},
+                    {text: "A beak, a crown of bone, then... black...", destinationID: "bird"}
+                ]
+            },
+            "timeOffice": {
+                id: "timeOffice",
+                text: "They say that at the end of one's life, nobody ever wished they spent more time at the office.",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "That's so true", destinationID: "stepAway"},
+                    {text: "Actually, I wish  do spent more time at the office", destinationID: "cubicle"}
+                ]
+            },
+            "stepAway": {
+                id: "stepAway",
+                text: "Good thinking I was able to step away and enjoy my trip for a little while. But what was I doing?",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                {text: "I was watching TV in my hotel room. It was too hot outside!", destinationID: "hotel"},
+                {text: "I was on an excursion. Foolish, for a city guy like me.", destinationID: "excursion"},
+                ]
+            },
+            // WORK/AWAKEN IN CUBICLE INCOMPLETE
+            "cubicle": {
+                id: "cubicle",
+                text: "In a sudden flash, I'm transported to my cubicle. It's a true paradise, and I never have to leave.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "STORY INCOMPLETE - START OVER", destinationID: "start"}
+                ]
+            },
+            // HOTEL/WAKE FROM DREAM INCOMPLETE
+            "dream": {
+                id: "dream",
+                text: "I awake from my dream.",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "STORY INCOMPLETE - START OVER", destinationID: "start"}
+                ]
+            },
+            "wait": {
+                id: "wait",
+                text: "And then I remember being inside for a while...",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Wait...", destinationID: "hotel"}
+                ]
+            },
+            "bird": {
+                id: "bird",
+                text: "Ahh, that bird. That horrible bird!!",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "That's it! I remember everything now", destinationID: "inPresent"}
+                ]
+            },
+            "inPresent": {
+                id: "inPresent",
+                text: "Now that I've regained my memories, I'm back in the present. Yet here's that bird in front of me, silent and motionless...",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I must attack. I will have my revenge.", destinationID: "attackBird"},
+                    {text: "I give it a forgiving kiss on the beak. Its suffering is over, as is my own", destinationID: "tasteBird"},
+                    {text: "I'll wait for the beast to move. Maybe it's only pretending to be taxidermied", destinationID: "waitForBird"}
+                ]
+            },
+            "attackBird": {
+                id: "attackBird",
+                text: "The bird falls over, stiff as a board. Some stuffing comes out of a hole in its neck.",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Keep going! It has more suffering to do!", destinationID: "attackBird2"},
+                    {text: "This is pointless...", destinationID: "nothingLeft"}
+                ]
+            },
+            "tasteBird": {
+                id: "tasteBird",
+                text: "Eugh... it tastes really bad.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I was trying to be nice, but this is the thanks I get? I attack the evil-tasting bird!", destinationID: "attackBird"},
+                    {text: "Inspite of its foul, fowl taste, I will be the bigger human... or the only human, and forgive it for tasting to so bad", destinationID: "nothingLeft"}
+                ]
+            },
+            "waitForBird": {
+                id: "waitForBird",
+                text: "I see through your elaborate ruse, vile bird!",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "Don't worry - I'll wait!", destinationID: "waitForBird2"},
+                ]
+            },
+            "waitForBird2": {
+                id: "waitForBird",
+                text: "...Hm... It still hasn't moved an inch...",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "I'll give it a minute", destinationID: "waiting1"},
+                    {text: "Actually, I think it's really dead", destinationID: "enoughWaiting"},
+                ]
+            },
+            "waiting1": {
+                id: "waiting1",
+                text: "Hmm...",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I'll wait longer", destinationID: "waiting2"}
+                ]
+            },
+            "waiting2": {
+                id: "waiting2",
+                text: "*sigh*",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "...", destinationID: "waiting3"}
+                ]
+            },
+            "waiting3": {
+                id: "waiting3",
+                text: "Okay I think it's dead.",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Finally!", destinationID: "enoughWaiting"}
+                ]
+            },
+            "enoughWaiting": {
+                id: "enoughWaiting",
+                text: "Right then... now what to do about this avian beast?",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I must attack it! I still crave revenge.", destinationID: "attackBird"},
+                    {text: "I give it a forgiving kiss on the beak. Its suffering is over, as is my own", destinationID: "tasteBird"}
+                ]
+            },
+            "nothingLeft": {
+                id: "nothingLeft",
+                text: "There's nothing left for me in this Austrailian attic. What now?",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "If I wait long enough, maybe something will happen", destinationID: "nothingHappens"},
+                    {text: "I leave", destinationID: "leaveAttic"}
+                ]
+            },
+            //Attacking bird
+            "attackBird2": {
+                id: "attackBird2",
+                text: "I pount its stupid beak into the stupid floor. I grind it down to nothing but cotton, feathers, and dust",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Surely, this was my unfinished business. Surely I'll be free now.", destinationID: "reconstitutes"}
+                ]
+            },
+            "reconstitutes": {
+                id: "reconstitutes",
+                text: "No... before my eyes, the wretched beast reconstitutes itself!",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Run!", destinationID: "run"},
+                    {text: "I must stand my ground", destinationID: "futile"}
+                ]
+            },
+            "run": {
+                id: "run",
+                text: "I try to flee, but it's too fast - fueled by pure hellfire!",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I can't keep running much further!", destinationID: "futile"}
+                ]
+            },
+            "futile": {
+                id: "futile",
+                text: "My efforts are futile! The monster pecks and pecks at my poor head.",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "I Accept this second death... and whatever comes next...", destinationID: "ectoplasmic"},
+                    {text: "Thrash around and really draw it out", destinationID: "thrash"},
+                ]
+            },
+            "thrash": {
+                id: "thrash",
+                text: "Success! It takes a really long time, but eventually the bird does kill me. I'd like to say it's equally unpleasant for both of us, but the bird doesn't seem to mind.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I've died a second time. A death... within a death", destinationID: "ectoplasmic"}
+                ]
+            },
+            "ectoplasmic": {
+                id: "ectoplasmic",
+                text: "My ghostly form has been bashed into an ectoplasmic putty",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I'm quite repulsive", destinationID: "void"}
+                ]
+            },
+            "void": {
+                id: "void",
+                text: "I find myself falling through a great void, with no company, but my own thoughts and memories. After a long time, even those escape me...",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Who am I?", destinationID: "blankness"},
+                    {text: "Where am I?", destinationID: "blankness"},
+                ]
+            },
+            "blankness": {
+                id: "blankness",
+                text: "It doesn't matter... Before I'm subsumed by a calming blankness, I wonder if I make up somewhere new, where perhaps, I could make new choices...",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Unlikely, but it's a nice thought", destinationID: "start"},
+                ]
+            },
+            "nothingHappens": {
+                id: "nothingHappens",
+                text: "Hm. Nothing is happening. Occasionally a rat or spider scamper around, but it doesn't really change my situation.",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "I guess I'll just leave", destinationID: "leaveAttic"},
+                ]
+            },
+            "leaveAttic": {
+                id: "leaveAttic",
+                text: "I descend upon the attic ladder and drift along the upstairs hallway",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "This place sure is... rustic...", destinationID: "hallway"},
+                ]
+            },
+            "hallway": {
+                id: "hallway",
+                text: "The house reeks of rotting taxidermy. Or I'm sure it would if I could still smell.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I guess I never realize ghosts couldn't smell.", destinationID: "oldMan"},
+                ]
+            },
+            "oldMan": {
+                id: "oldMan",
+                text: "I continue my descent, down the stairs, where an old man sits in an easy chair",
+                imageName: "Ghost.jpeg",
+                choices: [
+                    {text: "I should say hello", destinationID: "sayHello"},
+                    {text: "I should say scare him", destinationID: "scareHim"},
+                    {text: "I should leave him be", destinationID: "leaveHim"},
+                ]
+            },
+            //THIS ONE ISN'T FINISHED
+
+            "sayHello": {
+                id: "sayHello",
+                text: "Well... here it goes",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "Hello", destinationID: "hunterAwakens"},
+                    {text: "Oi there, Mate!", destinationID: "hunterAwakens"},
+                ]
+            },
+            //THIS ONE ISN'T FINISHED
+            "leaveHim": {
+                id: "",
+                text: "",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "STORY UNFINISHED - START OVER", destinationID: "start"},
+                ]
+            },
+            "scareHim": {
+                id: "scareHim",
+                text: "Here goes nothing",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "Boo!", destinationID: "hunterAwakens"},
+                    {text: "OooOoOoOoOo!", destinationID: "hunterAwakens"},
+                ]
+            },
+            "hunterAwakens": {
+                id: "hunterAwakens",
+                text: "The old man stirs, I now see he's fallen asleep with a hunting rifle in his lap",
+                imageName: "Ghost2.jpeg",
+                choices: [
+                    {text: "STORY UNFINISHED - START OVER", destinationID: "start"},
+                ]
+            }, /*
+            "": {
+                id: "",
+                text: "",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "", destinationID: ""},
+                ]
+            }, */
         };
 
         let currentNodeID = "start";
@@ -232,6 +564,6 @@
 
         // Start the story
         showCurrentNode();
-    </script>
-</body>
+        </script>
+        </body>
 </html>
