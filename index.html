@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Visual Novel Project</title>
+    <title>A Terrifying Ghost Story</title>
     <!-- Add the viewport meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -123,10 +123,28 @@
     </div>
     <script>
         const storyData = {
+            "mainMenu": {
+                id: "mainMenu",
+                text: "My Ghost Story",
+                imageName: "beginning.png",
+                choices: [
+                    {text: "Begin", destinationID: "start"},
+                    {text: "Credits", destinationID: "credits"}
+                ]
+            },
+            "credits": {
+                id: "credits",
+                text: "By Jesse Sheehan and Arthur Hickman",
+                imageName: "Ghost1.jpeg",
+                choices: [
+                    {text: "Back", destinationID: "mainMenu"},
+                    
+                ]
+            },
             "start": {
                 id: "start",
                 text: "Suddenly... I'm awake. Floating above the ground...",
-                imageName: "Ghost1.jpeg",
+                imageName: "awake.png",
                 choices: [
                     {text: "I must be a ghost", destinationID: "aGhost"},
                     {text: "I can fly!", destinationID: "firstFlying"}
@@ -135,7 +153,7 @@
             "aGhost": {
                 id: "aGhost",
                 text: "A ghost? Yes. So that must mean",
-                imageName: "Ghost2.jpeg",
+                imageName: "ghosthand.png",
                 choices: [
                     {text: "I'm dead.", destinationID: "dead"}
                 ]
@@ -143,7 +161,7 @@
             "firstFlying": {
                 id: "firstFlying",
                 text: "I'm the first flying man in human history!",
-                imageName: "Ghost3.jpeg",
+                imageName: "firstflying.png",
                 choices: [
                     {text: "I've got to tell the newspaper", destinationID: "newspaper"},
                     {text: "Wait, why can I see through my hand? Could I be a...", destinationID: "aGhost"}
@@ -152,7 +170,7 @@
             "newspaper": {
                 id: "newspaper",
                 text: "I reach to call my contacts at the paper, but my hand passes through my phone. Does this mean what I think it means?",
-                imageName: "Ghost2.jpeg",
+                imageName: "handpass.png",
                 choices: [
                     {text: "I must be a...", destinationID: "aGhost"}
                 ]
@@ -160,7 +178,7 @@
             "dead": {
                 id: "dead",
                 text: "Wow. I'm overwhelmed with feelings both physical and emotional",
-                imageName: "Ghost1.jpeg",
+                imageName: "skull.png",
                 choices: [
                     {text: "The weather here feels... hot and dry... mate", destinationID: "austrailia"}
                 ]
@@ -168,7 +186,7 @@
             "austrailia": {
                 id: "austrailia",
                 text: "Was... Was I in Austrailia? But... why was I there?",
-                imageName: "Ghost2.jpeg",
+                imageName: "overwhelmed.png",
                 choices: [
                     {text: "It was a vacation, I always wanted to see the outback", destinationID: "trip"},
                     {text: "There was a content involving cereal boxes. I won a free trip to Sydney", destinationID: "trip"},
@@ -178,7 +196,7 @@
             "trip": {
                 id: "trip",
                 text: "Of course! My trip down under... But what was I actually doing there?",
-                imageName: "Ghost3.jpeg",
+                imageName: "inaustrailia.png",
                 choices: [
                     {text: "I was watching TV in my hotel room. It was too hot outside!", destinationID: "hotel"},
                     {text: "I was on an excursion. Foolish, for a city guy like me.", destinationID: "excursion"},
@@ -188,7 +206,7 @@
             "work": {
                 id: "work",
                 text: "Work always did control my life...",
-                imageName: "Ghost1.jpeg",
+                imageName: "ghostform.png",
                 choices: [
                     {text: "I was quite the working stiff", destinationID: "timeOffice"}
                 ]
@@ -235,7 +253,7 @@
                 text: "In a sudden flash, I'm transported to my cubicle. It's a true paradise, and I never have to leave.",
                 imageName: "Ghost3.jpeg",
                 choices: [
-                    {text: "STORY INCOMPLETE - START OVER", destinationID: "start"}
+                    {text: "STORY INCOMPLETE - START OVER", destinationID: "mainMenu"} // CHANGE FROM mainMenu
                 ]
             },
             // HOTEL/WAKE FROM DREAM INCOMPLETE
@@ -244,7 +262,7 @@
                 text: "I awake from my dream.",
                 imageName: "Ghost1.jpeg",
                 choices: [
-                    {text: "STORY INCOMPLETE - START OVER", destinationID: "start"}
+                    {text: "STORY INCOMPLETE - START OVER", destinationID: "mainMenu"} // CHANGE FROM mainMenu
                 ]
             },
             "wait": {
@@ -487,7 +505,7 @@
                 text: "The old man stirs, I now see he's fallen asleep with a hunting rifle in his lap",
                 imageName: "Ghost2.jpeg",
                 choices: [
-                    {text: "STORY UNFINISHED - START OVER", destinationID: "start"},
+                    {text: "STORY UNFINISHED - START OVER", destinationID: "mainMenu"}, // change from mainMenu
                 ]
             }, /*
             "": {
@@ -500,7 +518,7 @@
             }, */
         };
 
-        let currentNodeID = "start";
+        let currentNodeID = "mainMenu";
         let tappedChoice = null;
 
         function showCurrentNode() {
