@@ -7,127 +7,147 @@
     <style>
         /* Base styles */
         body {
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-#content {
-    width: 100%;
-    max-width: 50%;
-    padding-top: 10%;
-    margin: auto;
-}
+        #content {
+            width: 100%;
+            max-width: 50%;
+            padding-top: 5%;
+            margin: auto;
+        }
 
-#image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 8px solid transparent;
-    border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)) 1;
-    animation: borderColor 2s linear infinite alternate;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    max-width: 1200px; /* Up to 600% of 200px */
-    width: 100%;
-    margin: 0 auto;
+        #image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 8px solid transparent;
+            border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)) 1;
+            animation: borderColor 2s linear infinite alternate;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 300%;
+            width: 100%;
+            margin: 0 auto;
+            transition: transform 1s ease-in-out;
 
-}
 
-#image-container img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    /* image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor; */
-}
+        }
 
-#text {
-    font-size: 1.5em;
-    padding: 20px;
-    font-style: italic;
-    max-width: 800px;
-    margin: 0 auto;
-}
+        #image-container img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            transition: transform 1s ease-in-out; 
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
 
-.choice-button {
-    display: inline-block;
-    padding: 15px 25px;
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: transform 0.5s, opacity 0.5s, top 1s;
-    position: relative;
-    font-size: 1.25em;
-    max-width: 90%;
-    white-space: normal;
-    word-wrap: break-word;
-}
+        #text {
+            font-size: 1.5em;
+            padding: 20px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    #content {
-        max-width: 200%;
-        padding-top: 10%;
-        margin: 0;
+        .choice-button {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.5s, opacity 0.5s, top 1s;
+            position: relative;
+            font-size: 1.25em;
+            max-width: 90%;
+            white-space: normal;
+            word-wrap: break-word;
+        }
 
-    }
+        .slide-out {
+            animation: slideOut 1s forwards;
+        }
 
-    #image-container {
-        max-width:80%; /* Allows container to be full width */
-    }
-    /* #image-container img {
-        
-    } */
+        /* Class to trigger slide-in animation */
+        .slide-in {
+            animation: slideIn 1s forwards;
+        }
 
-    #text {
-        font-size: 1em;
-    }
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            #content {
+                max-width: 200%;
+                padding-top: 10%;
+                margin: 0;
 
-    .choice-button {
-        padding: 12px 20px;
-        font-size: 0.9em;
-    }
-}
+            }
 
-/* Button animations */
-.choice-button.clicked {
-    transform: scale(1.5);
-}
+            #image-container {
+                max-width:80%; /* Allows container to be full width */
+            }
+            /* #image-container img {
+                
+            } */
 
-.choice-button.fall {
-    transform: scale(0.5);
-    top: 500px;
-    opacity: 0;
-}
+            #text {
+                font-size: 1em;
+            }
 
-.hidden {
-    opacity: 0;
-}
+            .choice-button {
+                padding: 12px 20px;
+                font-size: 0.9em;
+            }
+        }
 
-/* Border animation */
-@keyframes borderColor {
-    0% {
-        border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)) 1;
-    }
-    100% {
-        border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)) 1;
-    }
-}
+        /* Button animations */
+        .choice-button.clicked {
+            transform: scale(1.5);
+        }
 
-        
+        .choice-button.fall {
+            transform: scale(0.5);
+            top: 500px;
+            opacity: 0;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        /* Border animation */
+        @keyframes borderColor {
+            0% {
+                border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)) 1;
+            }
+            100% {
+                border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)) 1;
+            }
+        }
+
+        /* @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }        */
     </style>
 </head>
 <body>
@@ -538,61 +558,98 @@
         let currentNodeID = "mainMenu";
         let tappedChoice = null;
 
-        function showCurrentNode() {
-            const currentNode = storyData[currentNodeID];
-            const imageElement = document.getElementById('image');
-            const textElement = document.getElementById('text');
-            const choicesElement = document.getElementById('choices');
-
-            // Update image
-            if (currentNode.imageName) {
-                imageElement.src = currentNode.imageName;
-                imageElement.style.display = 'inline';
-            } else {
-                imageElement.style.display = 'none';
-            }
-
-            // Update text
-            textElement.textContent = currentNode.text;
-
-            // Clear previous choices
-            choicesElement.innerHTML = '';
-
-            // Create choice buttons
-            if (currentNode.choices) {
-                currentNode.choices.forEach(choice => {
-                    const button = document.createElement('button');
-                    button.className = 'choice-button';
-                    button.textContent = choice.text;
-                    button.addEventListener('click', () => {
-                        handleChoiceTap(choice);
-                    });
-                    choicesElement.appendChild(button);
-                });
-            }
-        }
-
         function handleChoiceTap(choice) {
-            tappedChoice = choice.text;
-            const buttons = document.querySelectorAll('.choice-button');
+    tappedChoice = choice.text;
+    const buttons = document.querySelectorAll('.choice-button');
+    const imageElement = document.getElementById('image');
+    const imageContainer = document.getElementById('image-container');
+    const textElement = document.getElementById('text');
 
-            buttons.forEach(button => {
-                if (button.textContent === tappedChoice) {
-                    button.classList.add('clicked');
-                    setTimeout(() => {
-                        button.classList.add('fall');
-                    }, 500);
-                } else {
-                    button.classList.add('hidden');
-                }
-            });
-
+    // Handle button animations
+    buttons.forEach(button => {
+        if (button.textContent === tappedChoice) {
+            button.classList.add('clicked');
             setTimeout(() => {
-                currentNodeID = choice.destinationID;
-                resetAnimations();
-                showCurrentNode();
-            }, 1500);
+                button.classList.add('fall');
+            }, 500);
+        } else {
+            button.classList.add('hidden');
         }
+    });
+
+    // Fade out the text, image, and image container
+    setTimeout(() => {
+        textElement.style.transition = 'opacity 0.5s ease-in-out';
+        textElement.style.opacity = 0;
+        imageElement.style.transition = 'opacity 1s ease-in-out';
+        imageElement.style.opacity = 0;
+        imageContainer.style.transition = 'opacity 1s ease-in-out';
+        imageContainer.style.opacity = 0;
+    }, 500);
+
+    // After fade out is complete, update the node and fade in new content
+    setTimeout(() => {
+        currentNodeID = choice.destinationID;
+        resetAnimations();
+        showCurrentNode();
+    }, 1500);
+}
+
+function showCurrentNode() {
+    const currentNode = storyData[currentNodeID];
+    const imageElement = document.getElementById('image');
+    const imageContainer = document.getElementById('image-container');
+    const textElement = document.getElementById('text');
+    const choicesElement = document.getElementById('choices');
+
+    // Reset opacity to 0 to prepare for fade-in
+    imageElement.style.opacity = 0;
+    imageContainer.style.opacity = 0;
+    textElement.style.opacity = 0;
+
+    // Update image
+    if (currentNode.imageName) {
+        // Set the image source
+        imageElement.src = currentNode.imageName;
+
+        // Once the image is loaded, fade in the image and container
+        imageElement.onload = function() {
+            // Fade in the image and container after a slight delay
+            setTimeout(() => {
+                imageElement.style.opacity = 1;
+                imageContainer.style.opacity = 1;
+            }, 50); // Adjust delay as needed
+        };
+
+        imageElement.style.display = 'inline';
+    } else {
+        imageElement.style.display = 'none';
+    }
+
+    // Update text
+    textElement.textContent = currentNode.text;
+
+    // Fade in the text after a slight delay
+    setTimeout(() => {
+        textElement.style.opacity = 1;
+    }, 100); // Adjust delay as needed
+
+    // Clear previous choices
+    choicesElement.innerHTML = '';
+
+    // Create choice buttons
+    if (currentNode.choices) {
+        currentNode.choices.forEach(choice => {
+            const button = document.createElement('button');
+            button.className = 'choice-button';
+            button.textContent = choice.text;
+            button.addEventListener('click', () => {
+                handleChoiceTap(choice);
+            });
+            choicesElement.appendChild(button);
+        });
+    }
+}
 
         function resetAnimations() {
             tappedChoice = null;
