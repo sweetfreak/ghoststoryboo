@@ -257,12 +257,22 @@
             },
             "hotel": {
                 id: "hotel",
-                text: "So... am i actually just safe in my hotel room?",
+                text: "So I'm actually just safe in my hotel room? Maybe I'm not dead.",
                 imageName: "Ghost2.jpeg",
                 choices: [
-                    {text: "Maybe I'm not dead...", destinationID: "dream"}
+                    {text: "I knew I wasn't dead! What kind of self-respecting universe would let ME die?", destinationID: "dream"},
+                    {text: "I'm a floating translucent spirit. I'm obviously dead.", destination: "misremember"}
                 ]
             },
+            "misremember": {
+                id: "misremember",
+                text: "I must have misremembered. What's the last thing I REALLY rememember seeing?",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "A big round eye.", destinationID: "bird"},
+                    {text: "A beak, a crown of bone, and blackness", destinationID: "bird"}
+                ]
+            }, 
             "excursion": {
                 id: "excursion",
                 text: "I should have followed my natural inclination to stay indoors. But I didn't. And I died. What's the last thing I remember seeing?",
@@ -294,21 +304,61 @@
             // WORK/AWAKEN IN CUBICLE INCOMPLETE
             "cubicle": {
                 id: "cubicle",
-                text: "In a sudden flash, I'm transported to my cubicle. It's a true paradise, and I never have to leave.",
+                text: "In a sudden flash, I'm transported to my cubicle. I've been rewarded!",
                 imageName: "Ghost3.jpeg",
                 choices: [
-                    {text: "STORY INCOMPLETE - START OVER", destinationID: "mainMenu"} // CHANGE FROM mainMenu
+                    {text: "This is just where I wanted to be! Perhaps it's morally good to work?", destinationID: "officeParadise"}
                 ]
             },
+            "officeParadise": {
+                id: "officeParadise",
+                text: "I'm in a true paradise, and I'll never have to leave here!",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I've found peace", destinationID: "officePeace"},
+                ]
+            }, 
+            "officePeace": {
+                id: "officePeace",
+                text: "GAME OVER - GHOST HAS FOUND UNUSUAL BRAND OF PEACE",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "PLAY AGAIN", destinationID: "mainMenu"},
+                ]
+            }, 
             // HOTEL/WAKE FROM DREAM INCOMPLETE
             "dream": {
                 id: "dream",
-                text: "I awake from my dream.",
+                text: "I wake up with a start! What a horrible nightmare!",
                 imageName: "Ghost1.jpeg",
                 choices: [
-                    {text: "STORY INCOMPLETE - START OVER", destinationID: "mainMenu"} // CHANGE FROM mainMenu
+                    {text: "Check my hands for signs of ghostism", destinationID: "humanAgain"}
                 ]
             },
+            "humanAhain": {
+                id: "humanAgain",
+                text: "What a relief. A solid, human hand. Not even a little bit see-through",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I look out the window to appreciate life's beauty", destinationID: "bomb"},
+                ]
+            }, 
+            "bomb": {
+                id: "bomb",
+                text: "Uh oh",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Dang.", destinationID: "blownAway"},
+                ]
+            }, 
+            "blownAway": {
+                id: "blownAway",
+                text: "",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Well... what now?", destinationID: "void"},
+                ]
+            }, 
             "wait": {
                 id: "wait",
                 text: "And then I remember being inside for a while...",
@@ -477,7 +527,7 @@
                 text: "It doesn't matter... Before I'm subsumed by a calming blankness, I wonder if I make up somewhere new, where perhaps, I could make new choices...",
                 imageName: "Ghost3.jpeg",
                 choices: [
-                    {text: "Unlikely, but it's a nice thought", destinationID: "start"},
+                    {text: "Probably not, but it's a nice thought", destinationID: "start"},
                 ]
             },
             "nothingHappens": {
@@ -502,7 +552,7 @@
                 text: "The house reeks of rotting taxidermy. Or I'm sure it would if I could still smell.",
                 imageName: "Ghost3.jpeg",
                 choices: [
-                    {text: "I guess I never realized ghosts can't't smell.", destinationID: "oldMan"},
+                    {text: "I guess I never realized ghosts can't smell.", destinationID: "oldMan"},
                 ]
             },
             "oldMan": {
@@ -528,11 +578,11 @@
             },
             //THIS ONE ISN'T FINISHED
             "leaveHim": {
-                id: "",
-                text: "",
+                id: "leaveHim",
+                text: "As I sneak away, I knock over an urn. It smashes on the floor, releasing a cloud of ash, awakening the old man.",
                 imageName: "Ghost3.jpeg",
                 choices: [
-                    {text: "STORY UNFINISHED - START OVER", destinationID: "start"},
+                    {text: "They ashes...", destinationID: "ashes"},
                 ]
             },
             "scareHim": {
@@ -546,20 +596,113 @@
             },
             "hunterAwakens": {
                 id: "hunterAwakens",
-                text: "The old man stirs, I now see he's fallen asleep with a hunting rifle in his lap",
+                text: "The old hunter awakens with a terrified spasm, accidentally firing the gun towards my ghostly head",
                 imageName: "Ghost2.jpeg",
                 choices: [
-                    {text: "STORY UNFINISHED - START OVER", destinationID: "mainMenu"}, // change from mainMenu
+                    {text: "Dodge left", destinationID: "hitBullet"}, // change from mainMenu
+                    {text: "Stay still, hope he misses", destinationID: "closeCall"}, // change from mainMenu
+                    {text: "Dodge right", destinationID: "closeCall"}, // change from mainMenu
                 ]
-            }, /*
-            "": {
-                id: "",
-                text: "",
+            }, 
+            "hitBullet": {
+                id: "hitBullet",
+                text: "I'm blown into a shower of milky white ectoplasm...",
                 imageName: "Ghost3.jpeg",
                 choices: [
-                    {text: "", destinationID: ""},
+                    {text: "Not again...", destinationID: "void"},
+                    {text: "Oh well, that's life", destinationID: "void"}
                 ]
-            }, */
+            }, 
+            "closeCall": {
+                id: "closeCall",
+                text: "Phew, that was a close one. The shot hits an urn to my left, kicking up a thick cloud of ash",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Wait a minute. These ashes...", destinationID: "ashes"},
+                ]
+            }, 
+            "ashes": {
+                id: "ashes",
+                text: "They're mine. They produce a pleasant tingle as they float through me.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "This is a weird. Did not see this coming", destinationID: "sadMan"},
+                    {text: "It tickles! teehee!", destinationID: "sadMan"}
+                ]
+            }, 
+            "sadMan": {
+                id: "sadMan",
+                text: "As the ash settles around me, the old man falls to his knees and attemps to scoop up the ashes with his hands.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Yuck", destinationID: "scoop"},
+                ]
+            }, 
+            "scoop": {
+                id: "scoop",
+                text: "He cries out in a thick Aussie accent 'My child, my poor child... I avenged you, I killed that bastard bird, I really did!'",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "F-father?", destinationID: "cane"},
+                ]
+            }, 
+            "cane": {
+                id: "cane",
+                text: "My old man grabs his cane and hobbles about the house searching for a new contain, but to avail. He returns to my pile, empty-handed.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I'm not picky, just some tupperware is fine", destinationID: "dustpan"},
+                ]
+            }, 
+            "dustpan": {
+                id: "dustpan",
+                text: "He stares at my remnants for a long time until, finally, he sighs and sweeps me into a dust pan and tosses me into the trash.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Sheesh, I don't even get a proper burial?", destinationID: "trashOut"}
+                ]
+            }, 
+            "trashOut": {
+                id: "trashOut",
+                text: "Wait - a proper burial! I think that's my unfinished bus-- uh oh, he's taking out the trash, and it appears my ghostly form is tied to the ashes!",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Off to the dump, go I", destinationID: "garbageTruck"},
+                    {text: "Perhaps I'll haunt him from afar...", destinationID: "garbageTruck"}
+                ]
+            }, 
+            "garbageTruck": {
+                id: "garbageTruck",
+                text: "The next morning, the garbage truck whisks me away, delivering me to, what I can only image, is an eternity of waste.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "Good thing ghosts can't smell", destinationID: "burial"},
+                ]
+            }, 
+            "burial": {
+                id: "burial",
+                text: "The garbage truck unloads me amongst hundeds of other trash bags. Soon, my ashes are beneathing hundreds of pounds of garbage.",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "I guess.. it's kind of like being buried?", destinationID: "poof"},
+                ]
+            }, 
+            "poof": {
+                id: "poof",
+                text: "*poof*",
+                imageName: "Ghost3.jpeg",
+                choices: [
+                    {text: "...", destinationID: "last"},
+                ]
+            }, 
+            "last": {
+                    id: "last",
+                    text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL UNFINISHED BUSINESS: RESOLVED ",
+                    imageName: "Ghost3.jpeg",
+                    choices: [
+                        {text: "PLAY AGAIN", destinationID: "mainMenu"},
+                    ]
+                }, 
         };
 
         let currentNodeID = "mainMenu";
