@@ -4,48 +4,48 @@
     <title>A Terrifying Ghost Story</title>
     <!-- Add the viewport meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+      <!-- Google Font Link -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+   <style>
         /* Base styles */
         body {
             background-color: black;
             color: white;
-            font-family: monospace;
             text-align: center;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            font-family: "Jersey 10", sans-serif;
+
         }
 
         #content {
             width: 100%;
-            max-width: 50%;
+            max-width: 200%;
             padding-top: 5%;
             margin: auto;
         }
 
         #image-container {
-            display: flex;
             justify-content: center;
             align-items: center;
-            border: 8px solid transparent;
-            border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)) 1;
-            animation: borderColor 2s linear infinite alternate;
+            border: 8px solid white;
             border-radius: 10px;
             margin-bottom: 20px;
-            max-width: 300%;
-            width: 100%;
+            max-width: 25%;
             margin: 0 auto;
             transition: transform 1s ease-in-out;
-
-
         }
 
         #image-container img {
             width: 100%;
             height: auto;
-            max-width: 100%;
+            max-width: 200%;
             transition: transform 1s ease-in-out; 
             image-rendering: -moz-crisp-edges;
             image-rendering: -webkit-optimize-contrast;
@@ -56,36 +56,30 @@
         #text {
             font-size: 1.5em;
             padding: 20px;
-            font-style: italic;
+            /* font-style: italic; */
             max-width: 800px;
             margin: 0 auto;
         }
 
         .choice-button {
+            font-family: "Jersey 10", sans-serif;
+
             display: inline-block;
             padding: 15px 25px;
             margin: 10px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            font-weight: bold;
+            background-color: white;
+            color: black;
+            /* font-weight: bold; */
             border: none;
             border-radius: 25px;
             cursor: pointer;
             transition: transform 0.5s, opacity 0.5s, top 1s;
             position: relative;
-            font-size: 1.25em;
+            font-size: 1.5em;
             max-width: 90%;
             white-space: normal;
             word-wrap: break-word;
-        }
-
-        .slide-out {
-            animation: slideOut 1s forwards;
-        }
-
-        /* Class to trigger slide-in animation */
-        .slide-in {
-            animation: slideIn 1s forwards;
+            transition: opacity 0.5s steps(15), top 1s steps(5);
         }
 
         /* Responsive adjustments */
@@ -100,54 +94,67 @@
             #image-container {
                 max-width:80%; /* Allows container to be full width */
             }
-            /* #image-container img {
-                
-            } */
 
             #text {
-                font-size: 1em;
+                font-size: 2.0em;
             }
 
             .choice-button {
                 padding: 12px 20px;
-                font-size: 0.9em;
+                font-size: 1.5em;
             }
         }
 
         /* Button animations */
         .choice-button.clicked {
             transform: scale(1.5);
-        }
+            animation: scaleUpSteps 0.5s steps(3);
 
-        .choice-button.fall {
-            transform: scale(0.5);
-            top: 500px;
-            opacity: 0;
         }
 
         .hidden {
-            opacity: 0;
+            /* opacity: 0; */
+            transform: scale(0.5);
+            animation: scaleDownSteps 0.5s steps(3);
+
         }
 
-        /* Border animation */
-        @keyframes borderColor {
-            0% {
-                border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)) 1;
-            }
-            100% {
-                border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1)) 1;
-            }
+        /* Slide animations */
+        #content {
+            transition: transform 1.0s steps(15);
+            will-change: transform;
         }
 
-        /* @keyframes slideOut {
-            from { transform: translateX(0); }
-            to { transform: translateX(100%); }
+
+        .move-off-screen-left {
+            transform: translateX(-100%);
         }
 
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }        */
+        .slide-out-to-right {
+            transform: translateX(100%);
+        }
+
+        .slide-in-from-left {
+            transform: translateX(0);
+        }
+
+        .no-transition {
+            transition: none !important;
+        }
+
+        @keyframes scaleUpSteps {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1.5); }
+}
+
+@keyframes scaleDownSteps {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.75); }
+    100% { transform: scale(0.5); }
+}
+
+       
     </style>
 </head>
 <body>
@@ -558,41 +565,64 @@
         let currentNodeID = "mainMenu";
         let tappedChoice = null;
 
+
         function handleChoiceTap(choice) {
     tappedChoice = choice.text;
     const buttons = document.querySelectorAll('.choice-button');
     const imageElement = document.getElementById('image');
     const imageContainer = document.getElementById('image-container');
     const textElement = document.getElementById('text');
+    const contentElement = document.getElementById('content');
 
     // Handle button animations
     buttons.forEach(button => {
         if (button.textContent === tappedChoice) {
             button.classList.add('clicked');
-            setTimeout(() => {
-                button.classList.add('fall');
-            }, 500);
         } else {
             button.classList.add('hidden');
         }
     });
 
-    // Fade out the text, image, and image container
-    setTimeout(() => {
-        textElement.style.transition = 'opacity 0.5s ease-in-out';
-        textElement.style.opacity = 0;
-        imageElement.style.transition = 'opacity 1s ease-in-out';
-        imageElement.style.opacity = 0;
-        imageContainer.style.transition = 'opacity 1s ease-in-out';
-        imageContainer.style.opacity = 0;
-    }, 500);
+   
 
-    // After fade out is complete, update the node and fade in new content
+     // Wait for 2 seconds before starting the slide-out animation
+     setTimeout(() => {
+        // Start slide-out animation
+        contentElement.classList.add('slide-out-to-right');
+    // After slide-out is complete, update the node and slide in new content
     setTimeout(() => {
+        // Update the node
         currentNodeID = choice.destinationID;
         resetAnimations();
+
+        // Temporarily disable transition
+        contentElement.classList.add('no-transition');
+
+        // Remove 'slide-out' class and set content to off-screen to the left
+        contentElement.classList.remove('slide-out-to-right');
+        contentElement.classList.add('move-off-screen-left');
+
+        // Show the new content
         showCurrentNode();
-    }, 1500);
+
+        // Force reflow to ensure the browser registers the position change
+        void contentElement.offsetWidth;
+
+        // Re-enable transition
+        contentElement.classList.remove('no-transition');
+
+        // Start slide-in animation
+        contentElement.classList.remove('move-off-screen-left');
+        contentElement.classList.add('slide-in-from-left');
+
+        // After slide-in animation is complete, clean up
+        setTimeout(() => {
+            contentElement.classList.remove('slide-in-from-left');
+            contentElement.style.transform = '';
+        }, 1500); // duration of slide-in animation
+    }, 1500); // duration of slide-out animation
+}, 750); // Wait for .75 seconds before sliding out
+
 }
 
 function showCurrentNode() {
@@ -602,25 +632,12 @@ function showCurrentNode() {
     const textElement = document.getElementById('text');
     const choicesElement = document.getElementById('choices');
 
-    // Reset opacity to 0 to prepare for fade-in
-    imageElement.style.opacity = 0;
-    imageContainer.style.opacity = 0;
-    textElement.style.opacity = 0;
+ 
 
     // Update image
     if (currentNode.imageName) {
         // Set the image source
         imageElement.src = currentNode.imageName;
-
-        // Once the image is loaded, fade in the image and container
-        imageElement.onload = function() {
-            // Fade in the image and container after a slight delay
-            setTimeout(() => {
-                imageElement.style.opacity = 1;
-                imageContainer.style.opacity = 1;
-            }, 50); // Adjust delay as needed
-        };
-
         imageElement.style.display = 'inline';
     } else {
         imageElement.style.display = 'none';
@@ -628,11 +645,6 @@ function showCurrentNode() {
 
     // Update text
     textElement.textContent = currentNode.text;
-
-    // Fade in the text after a slight delay
-    setTimeout(() => {
-        textElement.style.opacity = 1;
-    }, 100); // Adjust delay as needed
 
     // Clear previous choices
     choicesElement.innerHTML = '';
@@ -651,9 +663,12 @@ function showCurrentNode() {
     }
 }
 
-        function resetAnimations() {
-            tappedChoice = null;
-        }
+function resetAnimations() {
+    tappedChoice = null;
+    const contentElement = document.getElementById('content');
+    contentElement.classList.remove('slide-out-to-right', 'move-off-screen-left', 'slide-in-from-left');
+    contentElement.style.transform = '';
+}
 
         // Start the story
         showCurrentNode();
