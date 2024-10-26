@@ -4,7 +4,14 @@
     <title>A Terrifying Ghost Story</title>
     <!-- Add the viewport meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Google Font Link -->
+
+    <link rel="icon" type="image/png" href="/index/favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/index/favicon.svg" />
+    <link rel="shortcut icon" href="/index/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/index/apple-touch-icon.png" />
+    <link rel="manifest" href="/index/site.webmanifest" />
+    
+        <!-- Google Font Link -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
@@ -86,7 +93,7 @@
             #content {
                 width: 80%;
                 /* max-width: 200%; */
-                padding-top: 8%;
+                padding-top: 7%;
                 margin: 0;
 
             }
@@ -143,16 +150,16 @@
         }
 
         @keyframes scaleUpSteps {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.25); }
-    100% { transform: scale(1.5); }
-}
+            0% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+            100% { transform: scale(1.5); }
+        }
 
-@keyframes scaleDownSteps {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.75); }
-    100% { transform: scale(0.5); }
-}
+        @keyframes scaleDownSteps {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.75); }
+            100% { transform: scale(0.5); }
+        }
 
        
     </style>
@@ -169,7 +176,7 @@
         const storyData = {
             "mainMenu": {
                 id: "mainMenu",
-                text: "My Ghost Story",
+                text: "A Terrifying Ghost Story...",
                 imageName: "beginning.png",
                 choices: [
                     {text: "Begin", destinationID: "start"},
@@ -697,7 +704,7 @@
             }, 
             "last": {
                     id: "last",
-                    text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL UNFINISHED BUSINESS: RESOLVED ",
+                    text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL. \nUNFINISHED BUSINESS: RESOLVED ",
                     imageName: "Ghost3.jpeg",
                     choices: [
                         {text: "PLAY AGAIN", destinationID: "mainMenu"},
