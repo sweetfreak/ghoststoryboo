@@ -268,7 +268,7 @@
                 imageName: "images/17.png",
                 choices: [
                     {text: "I knew I wasn't dead! What kind of self-respecting universe would let ME die?", destinationID: "dream"},
-                    {text: "I'm a floating translucent spirit. I'm obviously dead.", destination: "misremember"}
+                    {text: "I'm a floating translucent spirit. I'm obviously dead.", destinationID: "misremember"}
                 ]
             },
             "misremember": {
@@ -310,7 +310,7 @@
             },
             //MISSING IMAGE as of 10/27
             "cubicle": {
-                id: "13",
+                id: "cubicle",
                 text: "In a sudden flash, I'm transported to my cubicle. I've been rewarded!",
                 imageName: "images/Ghost3.jpeg",
                 choices: [
@@ -423,7 +423,7 @@
             },
             //NEED VARIATIONS OF THESE
             "waitForBird2": {
-                id: "waitForBird",
+                id: "waitForBird2",
                 text: "...Hm... It still hasn't moved an inch...",
                 imageName: "images/23.png",
                 choices: [
@@ -748,8 +748,14 @@
     // After slide-out is complete, update the node and slide in new content
     setTimeout(() => {
         // Update the node
-        currentNodeID = choice.destinationID;
-        resetAnimations();
+        if (choice.destinationID && storyData[choice.destinationID]) {
+                currentNodeID = choice.destinationID;
+            } else {
+                console.error(`Invalid destinationID: ${choice.destinationID}`);
+                alert('An error occurred. Returning to main menu.');
+                currentNodeID = 'mainMenu';
+            }
+            resetAnimations();
 
         // Temporarily disable transition
         contentElement.classList.add('no-transition');
