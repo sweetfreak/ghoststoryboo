@@ -177,7 +177,7 @@
             "mainMenu": {
                 id: "mainMenu",
                 text: "A Terrifying Ghost Story...",
-                imageName: "beginning.png",
+                imageName: "images/1.png",
                 choices: [
                     {text: "Begin", destinationID: "start"},
                     {text: "Credits", destinationID: "credits"}
@@ -186,7 +186,7 @@
             "credits": {
                 id: "credits",
                 text: "By Arthur Hickman and Jesse Sheehan",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/Ghost1.jpeg",
                 choices: [
                     {text: "Back", destinationID: "mainMenu"},
                     
@@ -195,7 +195,7 @@
             "start": {
                 id: "start",
                 text: "Suddenly... I'm awake. Floating above the ground...",
-                imageName: "awake.png",
+                imageName: "images/2.png",
                 choices: [
                     {text: "I must be a ghost", destinationID: "aGhost"},
                     {text: "I can fly!", destinationID: "firstFlying"}
@@ -204,7 +204,7 @@
             "aGhost": {
                 id: "aGhost",
                 text: "A ghost? Yes. So that must mean",
-                imageName: "ghosthand.png",
+                imageName: "images/3.png",
                 choices: [
                     {text: "I'm dead.", destinationID: "dead"}
                 ]
@@ -212,7 +212,7 @@
             "firstFlying": {
                 id: "firstFlying",
                 text: "I'm the first flying man in human history!",
-                imageName: "firstflying.png",
+                imageName: "images/4.png",
                 choices: [
                     {text: "I've got to tell the newspaper", destinationID: "newspaper"},
                     {text: "Wait, why can I see through my hand? Could I be a...", destinationID: "aGhost"}
@@ -221,7 +221,7 @@
             "newspaper": {
                 id: "newspaper",
                 text: "I reach to call my contacts at the paper, but my hand passes through my phone. Does this mean what I think it means?",
-                imageName: "handpass.png",
+                imageName: "images/5.png",
                 choices: [
                     {text: "I must be a...", destinationID: "aGhost"}
                 ]
@@ -229,7 +229,7 @@
             "dead": {
                 id: "dead",
                 text: "Wow. I'm overwhelmed with feelings both physical and emotional",
-                imageName: "skull.png",
+                imageName: "images/6.png",
                 choices: [
                     {text: "The weather here feels... hot and dry... mate", destinationID: "austrailia"}
                 ]
@@ -237,7 +237,7 @@
             "austrailia": {
                 id: "austrailia",
                 text: "Was... Was I in Austrailia? But... why was I there?",
-                imageName: "overwhelmed.png",
+                imageName: "images/7.png",
                 choices: [
                     {text: "It was a vacation, I always wanted to see the outback", destinationID: "trip"},
                     {text: "There was a content involving cereal boxes. I won a free trip to Sydney", destinationID: "trip"},
@@ -247,7 +247,7 @@
             "trip": {
                 id: "trip",
                 text: "Of course! My trip down under... But what was I actually doing there?",
-                imageName: "inaustrailia.png",
+                imageName: "images/8.png",
                 choices: [
                     {text: "I was watching TV in my hotel room. It was too hot outside!", destinationID: "hotel"},
                     {text: "I was on an excursion. Foolish, for a city guy like me.", destinationID: "excursion"},
@@ -257,7 +257,7 @@
             "work": {
                 id: "work",
                 text: "Work always did control my life...",
-                imageName: "ghostform.png",
+                imageName: "images/9.png",
                 choices: [
                     {text: "I was quite the working stiff", destinationID: "timeOffice"}
                 ]
@@ -265,7 +265,7 @@
             "hotel": {
                 id: "hotel",
                 text: "So I'm actually just safe in my hotel room? Maybe I'm not dead.",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/17.png",
                 choices: [
                     {text: "I knew I wasn't dead! What kind of self-respecting universe would let ME die?", destinationID: "dream"},
                     {text: "I'm a floating translucent spirit. I'm obviously dead.", destination: "misremember"}
@@ -274,7 +274,7 @@
             "misremember": {
                 id: "misremember",
                 text: "I must have misremembered. What's the last thing I REALLY rememember seeing?",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/10, 15.png",
                 choices: [
                     {text: "A big round eye.", destinationID: "bird"},
                     {text: "A beak, a crown of bone, and blackness", destinationID: "bird"}
@@ -283,7 +283,7 @@
             "excursion": {
                 id: "excursion",
                 text: "I should have followed my natural inclination to stay indoors. But I didn't. And I died. What's the last thing I remember seeing?",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/10, 15.png",
                 choices: [
                     {text: "Some sand, some shrubs. And then I remember taking my taxi back to my hotel...", destinationID: "wait"},
                     {text: "A big round eye", destinationID: "bird"},
@@ -293,7 +293,7 @@
             "timeOffice": {
                 id: "timeOffice",
                 text: "They say that at the end of one's life, nobody ever wished they spent more time at the office.",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/12.png",
                 choices: [
                     {text: "That's so true", destinationID: "stepAway"},
                     {text: "Actually, I wish  do spent more time at the office", destinationID: "cubicle"}
@@ -302,50 +302,52 @@
             "stepAway": {
                 id: "stepAway",
                 text: "Good thinking I was able to step away and enjoy my trip for a little while. But what was I doing?",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/11.png",
                 choices: [
                 {text: "I was watching TV in my hotel room. It was too hot outside!", destinationID: "hotel"},
                 {text: "I was on an excursion. Foolish, for a city guy like me.", destinationID: "excursion"},
                 ]
             },
-            // WORK/AWAKEN IN CUBICLE INCOMPLETE
+            //MISSING IMAGE as of 10/27
             "cubicle": {
-                id: "cubicle",
+                id: "13",
                 text: "In a sudden flash, I'm transported to my cubicle. I've been rewarded!",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "This is just where I wanted to be! Perhaps it's morally good to work?", destinationID: "officeParadise"}
                 ]
             },
+            //MISSING IMAGE as of 10/27
+
             "officeParadise": {
                 id: "officeParadise",
                 text: "I'm in a true paradise, and I'll never have to leave here!",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "I've found peace", destinationID: "officePeace"},
                 ]
             }, 
+            //MISSING IMAGE as of 10/27
             "officePeace": {
                 id: "officePeace",
                 text: "GAME OVER - GHOST HAS FOUND UNUSUAL BRAND OF PEACE",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "PLAY AGAIN", destinationID: "mainMenu"},
                 ]
             }, 
-            // HOTEL/WAKE FROM DREAM INCOMPLETE
             "dream": {
                 id: "dream",
                 text: "I wake up with a start! What a horrible nightmare!",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/18.png",
                 choices: [
                     {text: "Check my hands for signs of ghostism", destinationID: "humanAgain"}
                 ]
             },
-            "humanAhain": {
+            "humanAgain": {
                 id: "humanAgain",
                 text: "What a relief. A solid, human hand. Not even a little bit see-through",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/19.png",
                 choices: [
                     {text: "I look out the window to appreciate life's beauty", destinationID: "bomb"},
                 ]
@@ -353,15 +355,16 @@
             "bomb": {
                 id: "bomb",
                 text: "Uh oh",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/20.png",
                 choices: [
                     {text: "Dang.", destinationID: "blownAway"},
                 ]
             }, 
+
             "blownAway": {
                 id: "blownAway",
                 text: "",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/21.png",
                 choices: [
                     {text: "Well... what now?", destinationID: "void"},
                 ]
@@ -369,7 +372,7 @@
             "wait": {
                 id: "wait",
                 text: "And then I remember being inside for a while...",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/16.png",
                 choices: [
                     {text: "Wait...", destinationID: "hotel"}
                 ]
@@ -377,7 +380,7 @@
             "bird": {
                 id: "bird",
                 text: "Ahh, that bird. That horrible bird!!",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/14.png",
                 choices: [
                     {text: "I remember! I remember everything!", destinationID: "inPresent"}
                 ]
@@ -385,7 +388,7 @@
             "inPresent": {
                 id: "inPresent",
                 text: "Now that I've regained my memories, I'm back in the present day. Yet here's that bird in front of me, silent and motionless...",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/22.png",
                 choices: [
                     {text: "I must attack it. I will have my revenge!", destinationID: "attackBird"},
                     {text: "I place a forgiving kiss on its beak. Their suffering is now over, as is my own.", destinationID: "tasteBird"},
@@ -395,7 +398,7 @@
             "attackBird": {
                 id: "attackBird",
                 text: "The bird falls over, stiff as a board. Some stuffing comes out of a hole in its neck.",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/24.png",
                 choices: [
                     {text: "Keep going! It has more suffering to do!", destinationID: "attackBird2"},
                     {text: "This is pointless...", destinationID: "nothingLeft"}
@@ -404,7 +407,7 @@
             "tasteBird": {
                 id: "tasteBird",
                 text: "Eugh... it tastes really bad.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/25.png",
                 choices: [
                     {text: "I was trying to be nice, but this is the thanks I get? I attack the evil-tasting bird!", destinationID: "attackBird"},
                     {text: "Inspite of its foul, fowl taste, I will be the bigger human... or the only human, and forgive it for tasting to so bad", destinationID: "nothingLeft"}
@@ -413,67 +416,72 @@
             "waitForBird": {
                 id: "waitForBird",
                 text: "I see through your elaborate, cotton-stuffed ruse, vile creature!",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/23.png",
                 choices: [
                     {text: "You cannot fool me - I'll wait!", destinationID: "waitForBird2"},
                 ]
             },
+            //NEED VARIATIONS OF THESE
             "waitForBird2": {
                 id: "waitForBird",
                 text: "...Hm... It still hasn't moved an inch...",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/23.png",
                 choices: [
                     {text: "Give it another minute", destinationID: "waiting1"},
                     {text: "Actually, I think it's really dead", destinationID: "enoughWaiting"},
                 ]
             },
+           //NEED VARIATIONS OF THESE
             "waiting1": {
                 id: "waiting1",
                 text: "Hmm...",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/23.png",
                 choices: [
                     {text: "I'll wait longer", destinationID: "waiting2"}
                 ]
             },
+            //NEED VARIATIONS OF THESE
             "waiting2": {
                 id: "waiting2",
                 text: "*sigh*... hmm hm hmmm...",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/23.png",
                 choices: [
                     {text: "...", destinationID: "waiting3"}
                 ]
             },
+            //NEED VARIATIONS OF THESE
             "waiting3": {
                 id: "waiting3",
                 text: "Okay I think it's really dead.",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/23.png",
                 choices: [
                     {text: "Finally!", destinationID: "enoughWaiting"}
                 ]
             },
+            //NEED VARIATIONS OF THESE
             "enoughWaiting": {
                 id: "enoughWaiting",
                 text: "Right then... now what to do about this avian beast?",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/23.png",
                 choices: [
                     {text: "I must attack it! I still crave revenge.", destinationID: "attackBird"},
                     {text: "I give it a forgiving kiss on the beak. Its suffering is over, as is my own", destinationID: "tasteBird"}
                 ]
             },
+            //MISSING IMAGE
             "nothingLeft": {
                 id: "nothingLeft",
                 text: "There's nothing left for me in this Austrailian attic. What now?",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/Ghost1.jpeg",
                 choices: [
                     {text: "If I wait long enough, maybe something will happen", destinationID: "nothingHappens"},
                     {text: "I leave", destinationID: "leaveAttic"}
                 ]
             },
-            //Attacking bird
             "attackBird2": {
                 id: "attackBird2",
                 text: "I pount its stupid beak into the stupid floor. I grind it down to nothing but cotton, feathers, and dust",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/26.png",
                 choices: [
                     {text: "Surely, this was my unfinished business. Surely I'll be free now.", destinationID: "reconstitutes"}
                 ]
@@ -481,7 +489,7 @@
             "reconstitutes": {
                 id: "reconstitutes",
                 text: "No... before my eyes, the wretched beast reconstitutes itself!",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/27.png",
                 choices: [
                     {text: "Run!", destinationID: "run"},
                     {text: "I must stand my ground", destinationID: "futile"}
@@ -490,7 +498,7 @@
             "run": {
                 id: "run",
                 text: "I try to flee, but it's too fast - fueled by pure hellfire!",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/28.png",
                 choices: [
                     {text: "I can't keep running much further!", destinationID: "futile"}
                 ]
@@ -498,7 +506,7 @@
             "futile": {
                 id: "futile",
                 text: "My efforts are futile! The monster pecks and pecks at my poor head.",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/29.png",
                 choices: [
                     {text: "I Accept this second death... and whatever comes next...", destinationID: "ectoplasmic"},
                     {text: "Thrash around and really draw it out", destinationID: "thrash"},
@@ -507,15 +515,16 @@
             "thrash": {
                 id: "thrash",
                 text: "Success! It takes a really long time, but eventually the bird does kill me. I'd like to say it's equally unpleasant for both of us, but the bird doesn't seem to mind.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/31.png",
                 choices: [
                     {text: "I've died a second time. A death... within a death", destinationID: "ectoplasmic"}
                 ]
             },
+            //NEED A DIFFERENT NEW ONE
             "ectoplasmic": {
                 id: "ectoplasmic",
                 text: "My ghostly form has been bashed into an ectoplasmic putty",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/32.png",
                 choices: [
                     {text: "I'm quite repulsive", destinationID: "void"}
                 ]
@@ -523,7 +532,7 @@
             "void": {
                 id: "void",
                 text: "I find myself falling through a great void, with no company, but my own thoughts and memories. After a long time, even those escape me...",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/32.png",
                 choices: [
                     {text: "Who am I?", destinationID: "blankness"},
                     {text: "Where am I?", destinationID: "blankness"},
@@ -532,7 +541,7 @@
             "blankness": {
                 id: "blankness",
                 text: "It doesn't matter... Before I'm subsumed by a calming blankness, I wonder if I make up somewhere new, where perhaps, I could make new choices...",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Probably not, but it's a nice thought", destinationID: "start"},
                 ]
@@ -540,7 +549,7 @@
             "nothingHappens": {
                 id: "nothingHappens",
                 text: "Hm. Nothing is happening. Occasionally a rat or spider scamper around, but it doesn't really change my situation.",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/Ghost1.jpeg",
                 choices: [
                     {text: "I guess I'll just leave", destinationID: "leaveAttic"},
                 ]
@@ -548,7 +557,7 @@
             "leaveAttic": {
                 id: "leaveAttic",
                 text: "I descend upon the attic ladder and drift down. A veil of dust obscures the upstairs hallway. Man, this place really...",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/Ghost2.jpeg",
                 choices: [
                     {text: "....has a lot of character", destinationID: "hallway"},
                     {text: "...sucks!", destinationID: "hallway"},
@@ -557,7 +566,7 @@
             "hallway": {
                 id: "hallway",
                 text: "The house reeks of rotting taxidermy. Or I'm sure it would if I could still smell.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "I guess I never realized ghosts can't smell.", destinationID: "oldMan"},
                 ]
@@ -565,29 +574,26 @@
             "oldMan": {
                 id: "oldMan",
                 text: "I continue my descent, down the stairs, where an old man sits in an easy chair. I should...",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/Ghost1.jpeg",
                 choices: [
                     {text: "say hello", destinationID: "sayHello"},
                     {text: "scare him!", destinationID: "scareHim"},
                     {text: "leave him be.", destinationID: "leaveHim"},
                 ]
             },
-            //THIS ONE ISN'T FINISHED
-
             "sayHello": {
                 id: "sayHello",
                 text: "Well... here it goes",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/Ghost2.jpeg",
                 choices: [
                     {text: "Hello", destinationID: "hunterAwakens"},
                     {text: "Oi there, Mate!", destinationID: "hunterAwakens"},
                 ]
             },
-            //THIS ONE ISN'T FINISHED
             "leaveHim": {
                 id: "leaveHim",
                 text: "As I sneak away, I knock over an urn. It smashes on the floor, releasing a cloud of ash, awakening the old man.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "They ashes...", destinationID: "ashes"},
                 ]
@@ -595,7 +601,7 @@
             "scareHim": {
                 id: "scareHim",
                 text: "Here goes nothing",
-                imageName: "Ghost1.jpeg",
+                imageName: "images/Ghost1.jpeg",
                 choices: [
                     {text: "Boo!", destinationID: "hunterAwakens"},
                     {text: "OooOoOoOoOo!", destinationID: "hunterAwakens"},
@@ -604,7 +610,7 @@
             "hunterAwakens": {
                 id: "hunterAwakens",
                 text: "The old hunter awakens with a terrified spasm, accidentally firing the gun towards my ghostly head",
-                imageName: "Ghost2.jpeg",
+                imageName: "images/Ghost2.jpeg",
                 choices: [
                     {text: "Dodge left", destinationID: "hitBullet"}, // change from mainMenu
                     {text: "Stay still, hope he misses", destinationID: "closeCall"}, // change from mainMenu
@@ -614,7 +620,7 @@
             "hitBullet": {
                 id: "hitBullet",
                 text: "I'm blown into a shower of milky white ectoplasm...",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Not again...", destinationID: "void"},
                     {text: "Oh well, that's life", destinationID: "void"}
@@ -623,7 +629,7 @@
             "closeCall": {
                 id: "closeCall",
                 text: "Phew, that was a close one. The shot hits an urn to my left, kicking up a thick cloud of ash",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Wait a minute. These ashes...", destinationID: "ashes"},
                 ]
@@ -631,7 +637,7 @@
             "ashes": {
                 id: "ashes",
                 text: "They're mine. They produce a pleasant tingle as they float through me.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "This is a weird. Did not see this coming", destinationID: "sadMan"},
                     {text: "It tickles! teehee!", destinationID: "sadMan"}
@@ -640,7 +646,7 @@
             "sadMan": {
                 id: "sadMan",
                 text: "As the ash settles around me, the old man falls to his knees and attemps to scoop up the ashes with his hands.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Yuck", destinationID: "scoop"},
                 ]
@@ -648,7 +654,7 @@
             "scoop": {
                 id: "scoop",
                 text: "He cries out in a thick Aussie accent 'My child, my poor child... I avenged you, I killed that bastard bird, I really did!'",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "F-father?", destinationID: "cane"},
                 ]
@@ -656,7 +662,7 @@
             "cane": {
                 id: "cane",
                 text: "My old man grabs his cane and hobbles about the house searching for a new contain, but to avail. He returns to my pile, empty-handed.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "I'm not picky, just some tupperware is fine", destinationID: "dustpan"},
                 ]
@@ -664,7 +670,7 @@
             "dustpan": {
                 id: "dustpan",
                 text: "He stares at my remnants for a long time until, finally, he sighs and sweeps me into a dust pan and tosses me into the trash.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Sheesh, I don't even get a proper burial?", destinationID: "trashOut"}
                 ]
@@ -672,7 +678,7 @@
             "trashOut": {
                 id: "trashOut",
                 text: "Wait - a proper burial! I think that's my unfinished bus-- uh oh, he's taking out the trash, and it appears my ghostly form is tied to the ashes!",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Off to the dump, go I", destinationID: "garbageTruck"},
                     {text: "Perhaps I'll haunt him from afar...", destinationID: "garbageTruck"}
@@ -681,7 +687,7 @@
             "garbageTruck": {
                 id: "garbageTruck",
                 text: "The next morning, the garbage truck whisks me away, delivering me to, what I can only image, is an eternity of waste.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "Good thing ghosts can't smell", destinationID: "burial"},
                 ]
@@ -689,7 +695,7 @@
             "burial": {
                 id: "burial",
                 text: "The garbage truck unloads me amongst hundeds of other trash bags. Soon, my ashes are beneathing hundreds of pounds of garbage.",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "I guess.. it's kind of like being buried?", destinationID: "poof"},
                 ]
@@ -697,7 +703,7 @@
             "poof": {
                 id: "poof",
                 text: "*poof*",
-                imageName: "Ghost3.jpeg",
+                imageName: "images/Ghost3.jpeg",
                 choices: [
                     {text: "...", destinationID: "last"},
                 ]
@@ -705,7 +711,7 @@
             "last": {
                     id: "last",
                     text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL. \nUNFINISHED BUSINESS: RESOLVED ",
-                    imageName: "Ghost3.jpeg",
+                    imageName: "images/Ghost3.jpeg",
                     choices: [
                         {text: "PLAY AGAIN", destinationID: "mainMenu"},
                     ]
