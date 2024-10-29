@@ -5,7 +5,8 @@ const storyData = {
         imageName: "images/1.png",
         choices: [
             {text: "Begin", destinationID: "start"},
-            {text: "Credits", destinationID: "credits"}
+            {text: "Credits", destinationID: "credits"},
+            {text: "shortcut", destinationID: "inPresent"}
         ]
     },
     "mainMenu2": {
