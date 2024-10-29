@@ -340,12 +340,12 @@ const storyData = {
     },
     "futile": {
         id: "futile",
-        text: "My efforts are futile! The monster pecks and pecks at my poor head.",
+        text: "My efforts are futile! The monster pecks and pecks at my poor head!",
         imageName: "images/29.png",
         choices: [
-            {text: "I Accept this second death... and whatever comes next...", destinationID: "ectoplasmic"},
-            {text: "Thrash around and really draw it out", destinationID: "thrash"},
-            {text: "Actually, I'm kinda of bored of this bit", destinationID: "nothingLeft"}
+            {text: "I accept this second death... and whatever comes next...", destinationID: "ectoplasmic"},
+            {text: "Thrash around and really draw it out.", destinationID: "thrash"},
+            {text: "OK, actually, I've had enough of this bit. Time to move on.", destinationID: "nothingLeft"}
         ]
     },
     "thrash": {
@@ -353,15 +353,15 @@ const storyData = {
         text: "Success - it takes a really long time. But eventually the bird does kill me. I'd like to say it's equally unpleasant for both of us, but the bird doesn't seem to mind.",
         imageName: "images/31.png",
         choices: [
-            {text: "I've died a second time. A death... within a death", destinationID: "ectoplasmic"}
+            {text: "I've died a second time. A death... within a death.", destinationID: "ectoplasmic"}
         ]
     },
     "ectoplasmic": {
         id: "ectoplasmic",
-        text: "My ghostly form has been bashed into an ectoplasmic putty",
+        text: "My ghostly form has been bashed into an ectoplasmic putty.",
         imageName: "images/30.png",
         choices: [
-            {text: "I'm quite repulsive", destinationID: "void"}
+            {text: "I'm quite repulsive.", destinationID: "void"}
         ]
     },
     "void": {
@@ -381,7 +381,7 @@ const storyData = {
     },
     "notmatter": {
         id: "blankness",
-        text: "I guess it doesn't matter anymore",
+        text: "I guess it doesn't matter anymore.",
         imageName: "images/32.png",
         choices: [
             {text: "...", destinationID: "blankness"},
@@ -392,7 +392,7 @@ const storyData = {
         text: "Before I'm subsumed by a calming blankness, I wonder if I'll wake up somewhere new, where perhaps, I could make new choices...",
         imageName: "images/34.png",
         choices: [
-            {text: "Probably not, but it's a nice thought", destinationID: "mainMenu2"},
+            {text: "Probably not, but it's a nice thought.", destinationID: "mainMenu2"},
         ]
     },
 
@@ -401,7 +401,7 @@ const storyData = {
         text: "Hm. Nothing is happening. Occasionally a rat or spider scamper around, but it doesn't really change my situation.",
         imageName: "images/17.png",
         choices: [
-            {text: "I guess I'll just leave", destinationID: "leaveAttic"},
+            {text: "I guess I'll just leave.", destinationID: "leaveAttic"},
         ]
     },
     "leaveAttic": {
@@ -426,14 +426,14 @@ const storyData = {
         text: "I continue my descent, down the stairs, where an old man sits in an easy chair. I should...",
         imageName: "images/38.png",
         choices: [
-            {text: "say hello", destinationID: "sayHello"},
-            {text: "scare him!", destinationID: "scareHim"},
-            {text: "leave him be.", destinationID: "leaveHim"},
+            {text: "Say hello.", destinationID: "sayHello"},
+            {text: "Scare him!", destinationID: "scareHim"},
+            {text: "Leave him be.", destinationID: "leaveHim"},
         ]
     },
     "sayHello": {
         id: "sayHello",
-        text: "Well... here it goes",
+        text: "Well... here it goes.",
         imageName: "images/39.png",
         choices: [
             {text: "Hello", destinationID: "hunterAwakens"},
@@ -450,7 +450,7 @@ const storyData = {
     },
     "scareHim": {
         id: "scareHim",
-        text: "Here goes nothing",
+        text: "Hehehe. *deep inhale*",
         imageName: "images/39.png",
         choices: [
             {text: "Boo!", destinationID: "hunterAwakens"},
@@ -459,7 +459,7 @@ const storyData = {
     },
     "hunterAwakens": {
         id: "hunterAwakens",
-        text: "The old hunter awakens with a terrified spasm, accidentally firing the gun towards my ghostly head",
+        text: "The old hunter awakens with a terrified spasm, accidentally firing the gun towards my ghostly head.",
         imageName: "images/40.png",
         choices: [
             {text: "Dodge left", destinationID: "hitBullet"}, 
@@ -473,12 +473,12 @@ const storyData = {
         imageName: "images/41.png",
         choices: [
             {text: "Not again...", destinationID: "void"},
-            {text: "Oh well, that's life", destinationID: "void"}
+            {text: "Oh well, that's life. Or is that death?", destinationID: "void"}
         ]
     }, 
     "closeCall": {
         id: "closeCall",
-        text: "Phew, that was a close one. The shot hits an urn to my left, kicking up a thick cloud of ash",
+        text: "Phew, that was a close one. The shot hits an urn to my left, kicking up a thick cloud of ash.",
         imageName: "images/42.png",
         choices: [
             {text: "Wait a minute. These ashes...", destinationID: "ashes"},
@@ -498,7 +498,7 @@ const storyData = {
         text: "As the ash settles around me, the old man falls to his knees and attemps to scoop up the ashes with his hands.",
         imageName: "images/45.png",
         choices: [
-            {text: "Yuck", destinationID: "scoop"},
+            {text: "Yuck.", destinationID: "scoop"},
         ]
     }, 
     "scoop": {
@@ -514,7 +514,7 @@ const storyData = {
         text: "My old man grabs his cane and hobbles about the house searching for a new contain, but to avail. He returns to my pile, empty-handed.",
         imageName: "images/Ghost3.jpeg",
         choices: [
-            {text: "I'm not picky, just some tupperware is fine", destinationID: "dustpan"},
+            {text: "I'm not picky, just some tupperware is fine.", destinationID: "dustpan"},
         ]
     }, 
     "dustpan": {
@@ -530,7 +530,7 @@ const storyData = {
         text: "Wait - a proper burial! I think that's my unfinished bus-- uh oh, he's taking out the trash, and it appears my ghostly form is tied to the ashes!",
         imageName: "images/Ghost3.jpeg",
         choices: [
-            {text: "Off to the dump, go I", destinationID: "garbageTruck"},
+            {text: "Off to the dump, go I.", destinationID: "garbageTruck"},
             {text: "Perhaps I'll haunt him from afar...", destinationID: "garbageTruck"}
         ]
     }, 
@@ -539,7 +539,7 @@ const storyData = {
         text: "The next morning, the garbage truck whisks me away, delivering me to, what I can only image, is an eternity of waste.",
         imageName: "images/Ghost3.jpeg",
         choices: [
-            {text: "Good thing ghosts can't smell", destinationID: "burial"},
+            {text: "Good thing ghosts can't smell.", destinationID: "burial"},
         ]
     }, 
     "burial": {
@@ -560,7 +560,7 @@ const storyData = {
     }, 
     "last": {
             id: "last",
-            text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL. \nUNFINISHED BUSINESS: RESOLVED ",
+            text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL. \nUNFINISHED BUSINESS: RESOLVED",
             imageName: "images/Ghost3.jpeg",
             choices: [
                 {text: "PLAY AGAIN", destinationID: "mainMenu2"},
