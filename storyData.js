@@ -6,7 +6,7 @@ const storyData = {
         choices: [
             {text: "Begin", destinationID: "start"},
             {text: "Credits", destinationID: "credits"},
-            {text: "shortcut", destinationID: "inPresent"}
+            {text: "Shortcut", destinationID: "inPresent"},
         ]
     },
     "mainMenu2": {
