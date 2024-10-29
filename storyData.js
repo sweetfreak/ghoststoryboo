@@ -10,7 +10,7 @@ const storyData = {
     },
     "mainMenu2": {
         id: "mainMenu2",
-        text: "A Terrifying Ghost Story...",
+        text: "How about another... \nTerrifying Ghost Story...",
         imageName: "images/1.png",
         choices: [
             {text: "Begin Again", destinationID: "start"},
