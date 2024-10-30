@@ -1,31 +1,40 @@
 const storyData = {
     "mainMenu": {
         id: "mainMenu",
-        text: "A Terrifying Ghost Story...",
+        text: "A TERRIFYING GHOST STORY...",
         imageName: "images/1.png",
         choices: [
-            {text: "Begin", destinationID: "start"},
-            {text: "Credits", destinationID: "credits"},
-            {text: "Shortcut", destinationID: "inPresent"},
+            {text: "BEGIN", destinationID: "start"},
+            {text: "CREDITS", destinationID: "credits"},
+            {text: "ABOUT", destinationID: "about"},
         ]
     },
     "mainMenu2": {
         id: "mainMenu2",
-        text: "How about another... \nTerrifying Ghost Story...",
+        text: "How about another... \nTERRIFYING GHOST STORY...",
         imageName: "images/1.png",
         choices: [
-            {text: "Begin Again", destinationID: "start"},
-            {text: "Credits", destinationID: "credits"},
+            {text: "BEGIN AGAIN", destinationID: "start"},
+            {text: "CREDITS AGAIN", destinationID: "credits"},
+            {text: "ABOUT... AGAIN", destinationID: "about"}
             
         ]
     },
     "credits": {
         id: "credits",
         text: "By Arthur Hickman and Jesse Sheehan",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/58.png",
         choices: [
             {text: "Back", destinationID: "mainMenu"},
             
+        ]
+    },
+    "about": {
+        id: "about",
+        text: "A Terrifying Ghost Story is a tale of identity, mortality, and mostly nonsensical buffoonery. There are 3 endings - can you find them all?",
+        imageName: "images/46.png",
+        choices: [
+            {text: "OK", destinationID: "mainMenu"},
         ]
     },
     "start": {
@@ -67,12 +76,12 @@ const storyData = {
         text: "Oh wow. My mind flashes with memories of my final moments.",
         imageName: "images/6.png",
         choices: [
-            {text: "I remember feeling hot... and dry... mate.", destinationID: "austrailia"}
+            {text: "I remember feeling hot... and dry... mate.", destinationID: "australia"}
         ]
     },
-    "austrailia": {
-        id: "austrailia",
-        text: "Was... Was I in Austrailia? But... why was I there?",
+    "australia": {
+        id: "australia",
+        text: "Was... Was I in Australia? But... why was I there?",
         imageName: "images/7.png",
         choices: [
             {text: "It was a vacation - I always wanted to see the outback.", destinationID: "trip"},
@@ -132,7 +141,7 @@ const storyData = {
         imageName: "images/12.png",
         choices: [
             {text: "That's so true.", destinationID: "stepAway"},
-            {text: "Actually, I do wish spent more time at the office.", destinationID: "cubicle"}
+            {text: "Actually, I do wish I spent more time at the office.", destinationID: "cubicle"}
         ]
     },
     "stepAway": {
@@ -144,30 +153,26 @@ const storyData = {
         {text: "I was on an excursion. Foolish, for a city guy like me.", destinationID: "excursion"},
         ]
     },
-    //MISSING IMAGE as of 10/27
     "cubicle": {
         id: "cubicle",
         text: "In a sudden flash, I'm transported to my cubicle. I've been rewarded!",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/13.png",
         choices: [
             {text: "This is just where I wanted to be! Perhaps it's morally good to work?", destinationID: "officeParadise"}
         ]
     },
-    //MISSING IMAGE as of 10/27
-
     "officeParadise": {
         id: "officeParadise",
         text: "I'm in a true paradise, and I'll never have to leave here!",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/48.png",
         choices: [
             {text: "I'VE FOUND PEEEEEAAAAAACE!", destinationID: "officePeace"},
         ]
     }, 
-    //MISSING IMAGE as of 10/27
     "officePeace": {
         id: "officePeace",
         text: "GAME OVER - GHOST HAS FOUND UNUSUAL BRAND OF PEACE",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/49.png",
         choices: [
             {text: "PLAY AGAIN", destinationID: "mainMenu2"},
         ]
@@ -182,7 +187,7 @@ const storyData = {
     },
     "humanAgain": {
         id: "humanAgain",
-        text: "What a relief. A solid, human hand. Not even a little bit see-throug.h",
+        text: "What a relief. A solid, human hand. Not even a little bit see-through.",
         imageName: "images/19_rev.png",
         choices: [
             {text: "Look out the window to appreciate life's beauty.", destinationID: "bomb"},
@@ -257,7 +262,6 @@ const storyData = {
             {text: "You cannot fool me - I'll wait!", destinationID: "waitForBird2"},
         ]
     },
-    //NEED VARIATIONS OF THESE
     "waitForBird2": {
         id: "waitForBird2",
         text: "...Hm... It still hasn't moved an inch...",
@@ -267,7 +271,6 @@ const storyData = {
             {text: "Actually, I think it's really dead", destinationID: "enoughWaiting"},
         ]
     },
-   //NEED VARIATIONS OF THESE
     "waiting1": {
         id: "waiting1",
         text: "Hmm...",
@@ -276,7 +279,6 @@ const storyData = {
             {text: "I'll wait longer", destinationID: "waiting2"}
         ]
     },
-    //NEED VARIATIONS OF THESE
     "waiting2": {
         id: "waiting2",
         text: "*sigh* ... hmm hm hmmm...",
@@ -285,7 +287,6 @@ const storyData = {
             {text: "...", destinationID: "waiting3"}
         ]
     },
-    //NEED VARIATIONS OF THESE
     "waiting3": {
         id: "waiting3",
         text: "Okay I think it's really dead.",
@@ -294,7 +295,6 @@ const storyData = {
             {text: "Finally!", destinationID: "enoughWaiting"}
         ]
     },
-    //NEED VARIATIONS OF THESE
     "enoughWaiting": {
         id: "enoughWaiting",
         text: "Right then... now what to do about this avian beast?",
@@ -304,7 +304,6 @@ const storyData = {
             {text: "I give it a forgiving kiss on the beak. Its suffering is over, as is my own", destinationID: "tasteBird"}
         ]
     },
-    //MISSING IMAGE
     "nothingLeft": {
         id: "nothingLeft",
         text: "There's nothing left for me in this attic. What now?",
@@ -381,7 +380,7 @@ const storyData = {
         ]
     },
     "notmatter": {
-        id: "blankness",
+        id: "notmatter",
         text: "I guess it doesn't matter anymore.",
         imageName: "images/32.png",
         choices: [
@@ -393,14 +392,22 @@ const storyData = {
         text: "Before I'm subsumed by a calming blankness, I wonder if I'll wake up somewhere new, where perhaps, I could make new choices...",
         imageName: "images/34.png",
         choices: [
-            {text: "Probably not, but it's a nice thought.", destinationID: "mainMenu2"},
+            {text: "Probably not, but it's a nice thought.", destinationID: "blankness2"},
+        ]
+    },
+    "blankness2": {
+        id: "blankness2",
+        text: "GAME OVER - GHOST HAS DIED AGAIN. \nTHE CYCLE CONTINUES",
+        imageName: "images/black.png",
+        choices: [
+            {text: "PLAY AGAIN", destinationID: "mainMenu2"},
         ]
     },
 
     "nothingHappens": {
         id: "nothingHappens",
-        text: "Hm. Nothing is happening. Occasionally a rat or spider scamper around, but it doesn't really change my situation.",
-        imageName: "images/17.png",
+        text: "Hm. Nothing is happening. Occasionally a rat or spider scampers around, but it doesn't really change my situation.",
+        imageName: "images/47.png",
         choices: [
             {text: "I guess I'll just leave.", destinationID: "leaveAttic"},
         ]
@@ -496,7 +503,7 @@ const storyData = {
     }, 
     "sadMan": {
         id: "sadMan",
-        text: "As the ash settles around me, the old man falls to his knees and attemps to scoop up the ashes with his hands.",
+        text: "As the ash settles around me, the old man falls to his knees and attempts to scoop up the ashes with his hands.",
         imageName: "images/45.png",
         choices: [
             {text: "Yuck.", destinationID: "scoop"},
@@ -505,15 +512,15 @@ const storyData = {
     "scoop": {
         id: "scoop",
         text: "He cries out 'My child, my poor child... I avenged you, I killed that bastard bird, I really did!'",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/50.png",
         choices: [
             {text: "F-father?", destinationID: "cane"},
         ]
     }, 
     "cane": {
         id: "cane",
-        text: "My old man grabs his cane and hobbles about the house searching for a new contain, but to avail. He returns to my pile, empty-handed.",
-        imageName: "images/Ghost3.jpeg",
+        text: "My old man grabs his cane and hobbles about the house searching for a new container, but to no avail. He returns to my pile, empty-handed.",
+        imageName: "images/51.png",
         choices: [
             {text: "I'm not picky, just some tupperware is fine.", destinationID: "dustpan"},
         ]
@@ -521,7 +528,7 @@ const storyData = {
     "dustpan": {
         id: "dustpan",
         text: "He stares at my remnants for a long time until, finally, he sighs and sweeps me into a dust pan and tosses me into the trash.",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/52.png",
         choices: [
             {text: "Sheesh, I don't even get a proper burial?", destinationID: "trashOut"}
         ]
@@ -529,7 +536,7 @@ const storyData = {
     "trashOut": {
         id: "trashOut",
         text: "Wait - a proper burial! I think that's my unfinished bus-- uh oh, he's taking out the trash, and it appears my ghostly form is tied to the ashes!",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/53.png",
         choices: [
             {text: "Off to the dump, go I.", destinationID: "garbageTruck"},
             {text: "Perhaps I'll haunt him from afar...", destinationID: "garbageTruck"}
@@ -537,16 +544,16 @@ const storyData = {
     }, 
     "garbageTruck": {
         id: "garbageTruck",
-        text: "The next morning, the garbage truck whisks me away, delivering me to, what I can only image, is an eternity of waste.",
-        imageName: "images/Ghost3.jpeg",
+        text: "The next morning, the garbage truck whisks me away, delivering me to, what I can only imagine, is an eternity of waste.",
+        imageName: "images/54.png",
         choices: [
             {text: "Good thing ghosts can't smell.", destinationID: "burial"},
         ]
     }, 
     "burial": {
         id: "burial",
-        text: "The garbage truck unloads me amongst hundeds of other trash bags. Soon, my ashes are beneathing hundreds of pounds of garbage.",
-        imageName: "images/Ghost3.jpeg",
+        text: "The garbage truck unloads me amongst hundreds of other trash bags. Soon, my ashes are covered beneath hundreds of pounds of garbage.",
+        imageName: "images/55.png",
         choices: [
             {text: "I guess.. it's kind of like being buried?", destinationID: "poof"},
         ]
@@ -554,7 +561,15 @@ const storyData = {
     "poof": {
         id: "poof",
         text: "*poof*",
-        imageName: "images/Ghost3.jpeg",
+        imageName: "images/56a.png",
+        choices: [
+            {text: "...", destinationID: "poof2"},
+        ]
+    }, 
+    "poof2": {
+        id: "poof2",
+        text: "*poof*",
+        imageName: "images/56b.png",
         choices: [
             {text: "...", destinationID: "last"},
         ]
@@ -562,7 +577,7 @@ const storyData = {
     "last": {
             id: "last",
             text: "GAME OVER - GHOST HAS FOUND PEACE WITH A PROPER BURIAL. \nUNFINISHED BUSINESS: RESOLVED",
-            imageName: "images/Ghost3.jpeg",
+            imageName: "images/57.png",
             choices: [
                 {text: "PLAY AGAIN", destinationID: "mainMenu2"},
             ]
