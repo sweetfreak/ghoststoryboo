@@ -1,8 +1,11 @@
-
 let currentNodeID = "mainMenu";
+//            console.log(currentNodeID)
+
 let tappedChoice = null;
+ let saveLoadButtonsEl = document.getElementById('saveLoadButtons')
 
 function handleChoiceTap(choice) {
+    //console.log(choice)
     tappedChoice = choice.text;
     const buttons = document.querySelectorAll('.choice-button');
     const imageElement = document.getElementById('image');
@@ -30,6 +33,11 @@ function handleChoiceTap(choice) {
             // Update the node
             if (choice.destinationID && storyData[choice.destinationID]) {
                     currentNodeID = choice.destinationID;
+                    //console.log(choice.destinationID)
+                    if (!['credits', 'about', 'mainMenu', 'mainMenu2'].includes(currentNodeID)) {
+                        choiceJSONString = JSON.stringify(choice)
+                        localStorage.setItem('myNode', choiceJSONString)
+                    }
                 } else {
                     console.error(`Invalid destinationID: ${choice.destinationID}`);
                     alert('UH OHHHHH! An error occurred. Returning to main menu. Probably broke or something though.');
@@ -69,6 +77,26 @@ function handleChoiceTap(choice) {
     }, 500); // Wait for .75 seconds before sliding out
 }
 
+function resumeGameButton() {
+    if (currentNodeID == "mainMenu") {
+        let lastNode = localStorage.getItem('myNode');
+
+        if (lastNode) {
+            let parsedSave = JSON.parse(lastNode);
+            let loadButton = document.createElement('button');
+            saveLoadButtonsEl.appendChild(loadButton);
+            loadButton.classList.add('inline', 'data-button', 'load');
+            loadButton.textContent = "Resume Game";
+            //currentNodeID = lastNode   
+            loadButton.addEventListener('click', () => {
+                handleChoiceTap(parsedSave);
+                loadButton.remove()
+
+            });
+        }
+    }
+}
+
 function showCurrentNode() {
     const currentNode = storyData[currentNodeID];
     const imageElement = document.getElementById('image');
@@ -103,6 +131,16 @@ function showCurrentNode() {
             choicesElement.appendChild(button);
         });
     }
+    if (currentNodeID == 'mainMenu') {
+        resumeGameButton(); 
+    } else {
+        const loadButton = document.getElementsByClassName('load')
+        if (loadButton[0]) {
+            loadButton[0].remove()
+        }
+    }
+
+
 }
 
 function resetAnimations() {
@@ -112,5 +150,13 @@ function resetAnimations() {
     contentElement.style.transform = '';
 }
 
+
+
 // Start the story
 showCurrentNode();
+//resumeGameButton();
+//if currentNode is mainmenu
+
+
+
+

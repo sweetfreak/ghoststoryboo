@@ -71,6 +71,24 @@
             transition: opacity 0.5s steps(5), top 1s steps(5);
         }
 
+        .data-button {
+            font-family: "Jersey 10", sans-serif;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: white;
+            color: black;
+            /* font-weight: bold; */
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.25em;
+            max-width: 90%;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 600px) {
             #content {
@@ -93,6 +111,10 @@
             .choice-button {
                 padding: 5px 15px;
                 font-size: 1.25em;
+            }
+            .data-button {
+                padding: 5px 15px;
+                font-size: 1em;
             }
         }
 
